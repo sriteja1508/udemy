@@ -1,0 +1,139 @@
+:root {
+    --left-bg-color: rgba(43, 43, 43, 0.8);
+    --right-bg-color: rgba(43, 43, 43, 0.8);
+    --left-btn-hover-color: rgb(221, 221, 238);
+    --right-btn-hover-color: rgb(212, 236, 212);
+    --hover-width: 75%;
+    --other-width: 25%;
+    --speed: 1000ms;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Roboto', sans-serif;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+  }
+  
+  h1 {
+    font-size: 4rem;
+    color: rgb(250, 248, 248);
+    position: absolute;
+    left: 50%;
+    top: 20%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+  }
+  
+  .btn {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    left: 50%;
+    top: 40%;
+    transform: translateX(-50%);
+    text-decoration: none;
+    color: #fff;
+    border: #fff solid 0.2rem;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    width: 15rem;
+    padding: 1.5rem;
+  }
+  
+  .split.left .btn:hover {
+    background-color: var(--left-btn-hover-color);
+    border-color: var(--left-btn-hover-color);
+  }
+  
+  .split.right .btn:hover {
+    background-color: var(--right-btn-hover-color);
+    border-color: var(--right-btn-hover-color);
+  }
+  
+  .container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: #333;
+  }
+  
+  .split {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+  }
+  
+  .split.left {
+    left: 0;
+    background: url('https://christyleigh7.files.wordpress.com/2019/03/f6460e07-6d9d-419a-801e-47dc628c6d85.jpg?w=515&h=515://www.makeup.com/-/media/project/loreal/brand-sites/mdc/americas/us/articles/2018/september/6-maybelline/news-maybelline-superstay-new-color-announcement-lipstick-hero-mudc-090618.jpg://632a4c86e949c0c73cb2-d9fb28c104934e9db93a338db8a6ab81.lmsin.net/ls/maybelline/images/2019/mobile/en/group-28_3@2x.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  .split.left::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--left-bg-color);
+  }
+  
+  .split.right {
+    right: 0;
+    background: url('https://fromluxewithlove.com/wp-content/uploads/2021/03/Best-MAC-Products-5-300x400.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  .split.right::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--right-bg-color);
+  }
+  
+  .split.right,
+  .split.left,
+  .split.right::before,
+  .split.left::before {
+    transition: all var(--speed) ease-in-out;
+  }
+  
+  .hover-left .left {
+    width: var(--hover-width);
+  }
+  
+  .hover-left .right {
+    width: var(--other-width);
+  }
+  
+  .hover-right .right {
+    width: var(--hover-width);
+  }
+  
+  .hover-right .left {
+    width: var(--other-width);
+  }
+  
+  @media (max-width: 800px) {
+    h1 {
+      font-size: 2rem;
+      top: 30%;
+    }
+  
+    .btn {
+      padding: 1.2rem;
+      width: 12rem;
+    }
+  }
+  
+  
